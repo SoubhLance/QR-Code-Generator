@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QR Code Generator</h1>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <span class="sun">☀️</span>
+                <span class="moon">🌙</span>
+            </button>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="link">Link</button>
+            <button class="tab-btn" data-tab="text">Text</button>
+            <button class="tab-btn" data-tab="file">File</button>
+        </div>
+
+        <div class="input-section active" id="link-tab">
+            <div class="input-group">
+                <label for="url-input">Enter URL</label>
+                <input type="url" id="url-input" placeholder="https://example.com">
+            </div>
+        </div>
+
+        <div class="input-section" id="text-tab">
+            <div class="input-group">
+                <label for="text-input">Enter Text</label>
+                <textarea id="text-input" placeholder="Enter your text here"></textarea>
+            </div>
+        </div>
+
+        <div class="input-section" id="file-tab">
+            <div class="input-group">
+                <label for="file-input">Select Text File</label>
+                <input type="file" id="file-input" accept=".txt">
+                <p class="file-info" id="file-info">No file selected</p>
+            </div>
+        </div>
+
+        <div class="options">
+            <div class="option-group">
+                <label for="qr-size">QR Code Size</label>
+                <input type="range" id="qr-size" min="128" max="512" value="256" step="32">
+                <span id="size-value">256 x 256</span>
+            </div>
+            <div class="option-group">
+                <label for="qr-color">QR Code Color</label>
+                <input type="color" id="qr-color" value="#000000">
+            </div>
+            <div class="option-group">
+                <label for="qr-bg-color">Background Color</label>
+                <input type="color" id="qr-bg-color" value="#ffffff">
+            </div>
+        </div>
+
+        <button id="generate-btn" class="generate-btn">Generate QR Code</button>
+
+        <div class="result-container">
+            <div class="qr-wrapper" id="qr-wrapper">
+                <div id="qr-code"></div>
+                <div class="qr-loader">
+                    <div class="loader"></div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="download-btn" class="action-btn" disabled>Download QR Code</button>
+                <button id="share-btn" class="action-btn" disabled>Share QR Code</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created with 💙 | QR Code Generator</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
