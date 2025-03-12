@@ -27,4 +27,5 @@ A simple QR Code Generator built using **HTML, CSS, and JavaScript**. This tool 
 2. Navigate to the project folder:
 ```bash
 cd qr-code-generator
+```
 3. Open `index.html` in your browser.
